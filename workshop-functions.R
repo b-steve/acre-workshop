@@ -258,7 +258,7 @@ plot.cov <- function(df, cov.name){
 }
 
 interpolate.covs <- function(df){
-    data.frame(x = ppws[, 1], y = ppws[, 2], acre:::par_extend_create(loc_cov = cov.df, mask = list(ppws))$output$data$mask[, -c(1, 2)])
+    data.frame(x = ppws[, 1], y = ppws[, 2], acre:::par_extend_create(loc.cov = cov.df, mask = list(ppws))$output$data$mask[, -c(1, 2)])
     
 }
 
