@@ -1,6 +1,4 @@
-#library(acre)
-library(devtools)
-load_all("~/GitHub/acre")
+library(acre)
 
 source("workshop-functions.R")
 
@@ -25,18 +23,10 @@ compare.to.truth(interpolated.df)
 survey.data <- conduct.survey()
 
 data <- read.acre(survey.data$captures, survey.data$traps,
-                  control_create_mask = list(buffer = 3000),
-                  loc_cov = cov.df)
+                  control.mask = list(buffer = 3000),
+                  loc.cov = cov.df, dist.cov = list(villages = villages.ppws))
 
 plot(data, type = "capt")
 plot(data, type = "covariates")
 
 fit1 <- fit.acre(data, detfn = "hhn")
-AIC(fit1)
-fit2 <- fit.acre(data, detfn = "hn")
-AIC(fit2)
-fit3 <- fit.acre(data, par_extend_model = list(D = ~ elevation + canopy.height),
-                 detfn = "hhn")
-AIC(fit3)
-
-show_Dsurf(fit3, new_data = interpolated.df, plot_contours = FALSE)

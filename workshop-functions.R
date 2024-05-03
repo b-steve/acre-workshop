@@ -106,6 +106,8 @@ conduct.survey <- function(skip.wait = FALSE){
         message(paste("\nClick on the map to select", n.sessions,
                       "locations at which to deploy clusters of three listening posts.\n"))
         image_xyz(ppws[, 1], ppws[, 2], z, asp = 1, zlim = c(0, 1), col = cols)
+        points(villages.ppws, pch = 16)
+        legend("topleft", legend = "Village", pch = 16)
         traps <- vector(mode = "list", length = n.sessions)
         for (i in 1:n.sessions){
             l <- locator(1)
