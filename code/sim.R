@@ -35,7 +35,7 @@ D.ppws <- D.calc(true.df)
 true.df$D <- D.ppws
 
 s.ppws <- sim.pop(true.df, D.calc)
-plot.cov(true.df, "village.dist")
-points(s.ppws)
+#plot.cov(true.df, "village.dist")
+#points(s.ppws)
 
 save(canopy.height.ppws, elevation.ppws, forest.type.ppws, villages.ppws, s.ppws, file = "ppws.RData")

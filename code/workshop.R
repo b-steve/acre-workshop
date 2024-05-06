@@ -2,7 +2,7 @@ library(acre)
 
 source("workshop-functions.R")
 
-cov.df <- measure.covariates()
+cov.df <- measure.covariates(skip.wait = TRUE)
 
 plot.cov(cov.df, "elevation")
 plot.cov(cov.df, "canopy.height")
@@ -20,7 +20,7 @@ plot.cov(interpolated.df, "forest.type")
 
 compare.to.truth(interpolated.df)
 
-survey.data <- conduct.survey()
+survey.data <- conduct.survey(skip.wait = TRUE)
 
 data <- read.acre(survey.data$captures, survey.data$traps,
                   control.mask = list(buffer = 3000),
