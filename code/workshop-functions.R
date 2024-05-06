@@ -45,7 +45,7 @@ measure.covariates <- function(skip.wait = FALSE){
             locs[i, ] <- c(l$x, l$y)
             points(locs[i, , drop = FALSE], pch = 16)
         }
-        h <- readline("Are you happy with these selections? If so, type 'y' to deploy your team to collect data. If not, type 'n' to reselect.\n")
+        h <- readline("Are you happy with these selections? \n\nType 'y' to deploy your team to collect data. Type 'n' to reselect.\n")
         if (h == "yes" | h == "y" | h == "Y" | h == "Yes"){
             happy <- TRUE
         }
@@ -114,7 +114,7 @@ conduct.survey <- function(skip.wait = FALSE){
             traps[[i]] <- cbind(x = c(l$x - 1000, l$x, l$x + 1000), y = rep(l$y, 3))
             points(traps[[i]], pch = 4)
         }
-        h <- readline("Are you happy with these selections? If so, type 'y' to deploy your team to conduct acoustic surveys. If not, type 'n' to reselect.\n")
+        h <- readline("Are you happy with these selections? \n\nType 'y' to deploy your team to conduct acoustic surveys. Type 'n' to reselect.\n")
         if (h == "yes" | h == "y" | h == "Y" | h == "Yes"){
             happy <- TRUE
         }
