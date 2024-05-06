@@ -30,3 +30,16 @@ plot(data, type = "capt")
 plot(data, type = "covariates")
 
 fit1 <- fit.acre(data, detfn = "hhn")
+fit2 <- fit.acre(data, detfn = "hhn", model = list(D = ~ forest.type + canopy.height))
+
+summary(fit1)
+summary(fit2)
+
+plot(fit1, type = "Dsurf", new.data = ppws)
+plot(fit2, type = "Dsurf", new.data = ppws)
+
+plot(fit1, type = "detfn")
+plot(fit2, type = "detfn", add = TRUE, col = "red")
+
+AIC(fit1)
+AIC(fit2)
